@@ -123,23 +123,25 @@ wn.onkey(fire_bullet, "space")
 
 # Main game loop
 while True:
-    # Move the enemy
-    x = enemy.xcor()
-    x += enemyspeed
-    enemy.setx(x)
 
-    # Move enemy back and down
-    if enemy.xcor() > 280:
-        y = enemy.ycor()
-        y -= 50
-        enemyspeed *= -1
-        enemy.sety(y)
+    for enemy in enemies:
+        # Move the enemy
+        x = enemy.xcor()
+        x += enemyspeed
+        enemy.setx(x)
+    
+        # Move enemy back and down
+        if enemy.xcor() > 280:
+            y = enemy.ycor()
+            y -= 50
+            enemyspeed *= -1
+            enemy.sety(y)
 
-    if enemy.xcor() < -280:
-        y = enemy.ycor()
-        y -= 50
-        enemyspeed *= -1
-        enemy.sety(y)
+        if enemy.xcor() < -280:
+            y = enemy.ycor()
+            y -= 50
+            enemyspeed *= -1
+            enemy.sety(y)
 
     # Move the bullet
     if bulletstate == "fire":
