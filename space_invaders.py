@@ -200,6 +200,10 @@ while True:
             print("Game Over")
             break
 
+    if score == 50:
+        os.system("afplay winner.wav&")
+        break
+
     # Move the bullet
     if bulletstate == "fire":
         y = bullet.ycor()
@@ -210,6 +214,7 @@ while True:
     if bullet.ycor() > 275:
         bullet.hideturtle()
         bulletstate = "ready"
+
 
 
 
