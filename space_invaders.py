@@ -1,6 +1,7 @@
 import turtle
 import os
 from math import pow, sqrt
+import random
 
 
 # Set up the screen
@@ -48,7 +49,9 @@ for enemy in enemies:
     enemy.shape("circle")
     enemy.penup()
     enemy.speed(0)
-    enemy.setposition(-200, 200)
+    x = random.randint(-200, 200)
+    y = random.randint(100, 250)
+    enemy.setposition(x, y)
 
 enemyspeed = 2
 
