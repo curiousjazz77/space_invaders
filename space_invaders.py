@@ -177,6 +177,7 @@ while True:
             # Update score
             score += 10
             scorestring = "Score: %s" %score
+            score_pen.clear()
             score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 
 
