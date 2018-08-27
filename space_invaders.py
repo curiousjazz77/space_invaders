@@ -194,6 +194,7 @@ while True:
 
         # Check for a collision btwn enemy and player
         if isCollision(player, enemy):
+            os.system("afplay lose.wav&")
             player.hideturtle()
             enemy.hideturtle()
             print("Game Over")
