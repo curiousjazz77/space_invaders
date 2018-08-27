@@ -1,3 +1,6 @@
+# Python 3.6
+# Sound for Mac/Linux OS
+
 import turtle
 import os
 from math import pow, sqrt
@@ -118,6 +121,7 @@ def fire_bullet():
     """
     global bulletstate  # probably not a good idea for production code
     if bulletstate == "ready":
+        os.system("afplay laser.wav&")
         bulletstate = "fire"
         # Move the bullet to just above the player
         x = player.xcor()
@@ -172,6 +176,8 @@ while True:
 
         # Check for a collision btwn enemy and bullet
         if isCollision(bullet, enemy):
+            os.system("afplay explosion.wav&")
+            # Reset the bullet
             bullet.hideturtle()
             bulletstate = "ready"
             bullet.setposition(0, -400)
