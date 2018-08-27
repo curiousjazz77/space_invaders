@@ -32,17 +32,29 @@ player.setheading(90)
 
 playerspeed = 15
 
-# Create Enemy
-enemy = turtle.Turtle()
-enemy.color("orange")
-enemy.shape("circle")
-enemy.penup()
-enemy.speed(0)
-enemy.setposition(-200, 200)
+# Choose a number of enemies
+number_of_enemies = 5
+# Create an empty list of enemies
+enemies = []
+
+# Add enemies to the list
+for i in range(number_of_enemies):
+    # Create the enemy
+    enemies.append(turtle.Turtle())
+
+for enemy in enemies:
+    # enemy = turtle.Turtle()
+    enemy.color("orange")
+    enemy.shape("circle")
+    enemy.penup()
+    enemy.speed(0)
+    enemy.setposition(-200, 200)
 
 enemyspeed = 2
 
-#Player's bullet
+
+
+# Player's bullet
 bullet = turtle.Turtle()
 bullet.color("yellow")
 bullet.shape("triangle")
