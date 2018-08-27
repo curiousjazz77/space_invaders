@@ -10,6 +10,11 @@ wn.bgcolor("black")
 wn.title("Space Invaders")
 wn.bgpic("space_invaders_background.gif")
 
+# register the shapes
+wn.register_shape("invader.gif")
+wn.register_shape("player.gif")
+
+
 # Draw Border
 border_pen = turtle.Turtle()
 border_pen.speed(0)
@@ -32,14 +37,14 @@ score_pen.speed(0)
 score_pen.color("white")
 score_pen.penup()
 score_pen.setposition(-290, 280)
-scorestring = "Score: %s" %score
+scorestring = "Score: %s" % score
 score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 score_pen.hideturtle()
 
 # Create the player turtle
 player = turtle.Turtle()
 player.color("light blue")
-player.shape("turtle")
+player.shape("player.gif")
 player.penup()
 player.speed(0) #fast as possible
 player.setposition(0, -250) #down near bottom of border
@@ -61,7 +66,7 @@ x = -150
 for enemy in enemies:
     # enemy = turtle.Turtle()
     enemy.color("red")
-    enemy.shape("circle")
+    enemy.shape("invader.gif")
     enemy.penup()
     enemy.speed(0)
     x = random.randint(-200, 200)
@@ -70,7 +75,6 @@ for enemy in enemies:
     x += 50
 
 enemyspeed = 2
-
 
 
 # Player's bullet
