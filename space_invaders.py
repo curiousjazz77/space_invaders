@@ -38,7 +38,7 @@ enemy.color("orange")
 enemy.shape("circle")
 enemy.penup()
 enemy.speed(0)
-enemy.setposition(-200, 250)
+enemy.setposition(-200, 200)
 
 enemyspeed = 2
 
@@ -145,5 +145,11 @@ while True:
         # Reset the enemy
         enemy.setposition(-200, 250)
 
+    # Check for a collision btwn enemy and player
+    if isCollision(player, enemy):
+        player.hideturtle()
+        enemy.hideturtle()
+        print("Game Over")
+        break
 
 wn.mainloop()
